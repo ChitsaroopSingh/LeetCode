@@ -6,7 +6,7 @@ class Solution(object):
         """
 
         d=[int(digit) for digit in str(num)]
-        print(d)
+        
         for i in range(len(d)):
     
             if d[i]==6:
