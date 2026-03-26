@@ -1,13 +1,12 @@
 class Solution(object):
     def largestSumAfterKNegations(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
-        for i in range(k):
-            x=min(nums)
-            y=nums.index(x)
-            nums[y]=-nums[y]
-        return sum(nums)
+        nums.sort()        
+        for i in range(len(nums)):
+            if nums[i]<0 and k>0:
+                nums[i]=-nums[i]
+                k-=1       
+        if k%2==1:
+            nums.sort()  
+            nums[0]=-nums[0]
         
+        return sum(nums)
