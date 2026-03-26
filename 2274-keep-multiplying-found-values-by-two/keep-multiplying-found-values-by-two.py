@@ -5,7 +5,8 @@ class Solution(object):
         :type original: int
         :rtype: int
         """
-        while original in nums:
+        nums_set = set(nums)
+        while original in nums_set:
             original*=2
         return original
 
